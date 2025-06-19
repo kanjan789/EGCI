@@ -12,6 +12,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build & Push Image
       run:
-        echo "${{ secret.DOCKERPASSWORD }}" | docker login -u"${{ secret.DOCKERUSERNAME }}" --password-stdin   
-        docker image build -t "${{ secret.DOCKERUSERNAME }}/EGCI:latest"
-        docker push "${{ secret.DOCKERUSERNAME }}/EGCI:latest"
+        echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u"${{ secrets.DOCKERUSERNAME }}" --password-stdin   
+        docker image build -t "${{ secrets.DOCKERUSERNAME }}/EGCI:latest"
+        docker push "${{ secrets.DOCKERUSERNAME }}/EGCI:latest"
